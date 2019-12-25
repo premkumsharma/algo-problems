@@ -7,14 +7,17 @@ public class MaxLengthPalindrome {
 
 	public static void main(String[] args) throws Exception {
 		{
-		    BufferedReader reader = new BufferedReader(
+		     BufferedReader reader = new BufferedReader(
 				    new InputStreamReader(System.in));
-				    
-		    int n =Integer.parseInt(reader.readLine());
+			int n = 0;
+			String line = reader.readLine();
+			if(line == null) return;
+		    n =Integer.parseInt(line);
 		    String text = reader.readLine();
+		    if(text == null) return;
 		    n = text.length();
 		    int start = 0, maxLength = 1;
-		    for(int i = 1 ; i < n - 1 ; i++)
+		    for(int i = 1 ; i < n  ; i++)
 		    {
 		        int low = i - 1; 
 		        int high = i;
