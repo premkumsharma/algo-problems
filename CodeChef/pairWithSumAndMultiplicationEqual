@@ -1,0 +1,53 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    public static int[] parseArray(String currentLine)
+    {
+        String [] numbers = currentLine.trim().split("\\s+");
+
+        int []numbersArray = new int[numbers.length];
+        for(int i = 0; i < numbersArray.length;i++)
+            numbersArray[i] = Integer.parseInt(numbers[i]);
+        return numbersArray;
+
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int test = 0,line = 0;
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String inputString = reader.readLine();
+        if(inputString != null)
+            test =Integer.parseInt(inputString);
+
+        while (test > 0)
+        {
+            int[] numbersArray = null;
+            inputString = reader.readLine();
+            if(inputString != null)
+                line = Integer.parseInt(inputString);
+                inputString = reader.readLine();
+                if(inputString != null)
+                    numbersArray = parseArray(inputString);
+
+                int count = 0;
+                int countOfZeros = 0,countOfTwos = 0;
+
+                for(int i = 0 ; i < numbersArray.length; i++)
+                {
+                    if(numbersArray[i] == 0) countOfZeros++;
+                    else if(numbersArray[i] == 2) countOfTwos++;
+                }
+                count = (countOfZeros * (countOfZeros - 1))/2 + (countOfTwos * (countOfTwos - 1))/2;
+            System.out.println(count);
+
+            --test;
+        }
+	}
+}
