@@ -1,0 +1,11 @@
+Java Reader
+BufferedReader reader = new BufferedReader(
+			    new InputStreamReader(System.in));
+          
+String line = reader.readLine();
+
+if(line != null) //Do something
+
+else return;
+			
+			reader.close();
